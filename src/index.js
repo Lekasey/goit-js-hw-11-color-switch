@@ -24,16 +24,13 @@ const randomIntegerFromInterval = (min, max) => {
   
 function colorChange() {
     intervalId = setInterval(() => {
-        // console.log(intervalId);
         refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0,colors.length)],
-        refs.btnStart.setAttribute('disabled', true)
-        // console.log(refs.body.style.backgroundColor);
+        refs.btnStart.disabled = true
     },1000) 
 }
 
 function stopColorChange() {
     clearInterval(intervalId)
-    // intervalId = null
-    refs.btnStart.removeAttribute('disabled')
+    refs.btnStart.disabled = false
 }
 
